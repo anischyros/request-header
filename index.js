@@ -18,5 +18,6 @@ function onRequest(request, response)
 	var stop = userAgent.indexOf(")");
 	obj.os = userAgent.substring(start + 1, stop);
 
+	response.setHeader("Content-Type", "text/json");
 	response.end(JSON.stringify(obj));
 }
